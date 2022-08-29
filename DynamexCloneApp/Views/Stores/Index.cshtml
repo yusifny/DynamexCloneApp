@@ -1,0 +1,50 @@
+@model IEnumerable<Store>
+
+@section styles {
+    <link href="@Url.Content("~/css/stores.css")" rel="stylesheet" type="text/css"/>
+}
+@section scripts {
+    <script src="js/stores.js" defer></script>
+}
+
+@{
+    ViewBag.Title = "Mağazalar";
+    Layout = "_Layout";
+}
+
+<main>
+    <!-- SECTIONS START -->
+    <section id="stores">
+        <div class="container">
+            <div class="row">
+                <div class="stores-title d-flex justify-content-center">
+                    <b>Mağazalar</b>
+                </div>
+                <div class="stores-description d-flex justify-content-center text-center">
+                    <p>
+                        Türkiyə mağazalarını sizlərə yaxın etdik. Alış-verişin ən sərfəli ünvanı <br>
+                        Dynamic Express ilə istədiyiniz mağazadan onlayn sifariş edin, biz çatdıraq.
+                    </p>
+                </div>
+                <div class="location d-flex justify-content-center">
+                    <a href="#stores" class="country all location-active">Bütün</a>
+                    <a href="#stores" class="country türkiye">Türkiyə</a>
+                    <a href="#stores" class="country usa">ABŞ</a>
+                </div>
+                <div class="store-wrapper col-12">
+                    <div class="row justify-content-center">
+                        @foreach (var store in Model)
+                        {
+                            <div class="store d-flex col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <a href="#stores">
+                                    <img src="imgs/stores/@store.ImageUrl" alt="">
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTIONS END -->
+</main>

@@ -1,0 +1,99 @@
+@model object
+
+@section styles {
+    <link href="@Url.Content("~/css/login.css")" rel="stylesheet" type="text/css"/>
+}
+
+@section scripts {
+    <script src="js/reset-modal.js" defer></script>
+}
+
+@{
+    ViewBag.Title = "Daxil ol";
+    Layout = "_Layout";
+}
+<!-- MODAL FOR PASSWORD RESET STARTS -->
+<div class="modal-wrapper col-5" style="display: none;">
+    <div class="modal">
+        <div class="modal-cont">
+            <div class="close" id="close-modal">
+                <span class="iconify" data-icon="ant-design:close-circle-outlined" data-height="24"></span>
+            </div>
+            <div class="m-header">
+                <span class="m-title">
+                    Şifrəni unutmusunuz?
+                </span>
+                <p class="m-hint">
+                    Şifrənizin yenilənməsi üçün email adresinizi daxil edin.
+                </p>
+            </div>
+            <div class="m-body">
+                <form action="" class="">
+                    <input type="email" required placeholder="Email">
+                    <div class="btn-wrap d-flex justify-content-center">
+                        <button class="register btn" type="submit">
+                            Göndər
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL FOR PASSWORD RESET ENDS -->
+<main>
+    <!-- SECTIONS START -->
+    <section id="intro">
+        <div class="container">
+            <div class="row">
+                <div class="faq-title d-flex justify-content-center">
+                    <b>Dynamex-ə xoş gəlmişsiniz!</b>
+                </div>
+                <div class="faq-description d-flex justify-content-center">
+                    <p>Heabınıza daxil olun!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 left">
+                    <div class="title">
+                        <b>Daxil ol</b>
+                    </div>
+                    <div class="form">
+                        <form action="post" class="form-group">
+                            <div class="email">
+                                <label for="Email">Email</label> <br>
+                                <input type="email" id="Email"> <br>
+                                <span class="error" style="display: none;">Email boş qoyula bilməz</span>
+                            </div>
+                            <div class="password">
+                                <label for="Password">Şifrə</label> <br>
+                                <input type="password" id="Password"> <br>
+                                <span class="error" style="display: none;">Şifrə boş qoyula bilməz</span>
+                            </div>
+                            <div class="remember">
+                                <input type="checkbox" id="Remember">
+                                <label for="Remember">Məni xatırla</label>
+                            </div>
+                            <button type="submit">Daxil ol</button>
+                            <span href="" class="reset" style="cursor: pointer; font-size: 13px; font-weight: 500;">Şifrəni yenilə</span>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 right">
+                    <div class="login-image-wrap">
+                        <img src="imgs/login/login.svg" alt="Login Image" class="login-image">
+                    </div>
+                    <div class="text">
+                        <span>Hesabınız yoxdur?</span>
+                        <a asp-controller="Register">Qeydiyyatdan keçin!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTIONS END -->
+</main>

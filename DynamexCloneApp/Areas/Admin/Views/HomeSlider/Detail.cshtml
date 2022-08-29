@@ -1,0 +1,16 @@
+@model HomeSlider
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "_AdminLayout";
+}
+<div class="container mt-3">
+    <div class="row align-items-center">
+        <div class="">
+            <h3>#@Model.Id</h3>
+            <h2>@Model.Title</h2>
+            <p style="font-size: 18px; margin-top: 1rem">@Model.Subtitle</p>
+            <img class="w-50" src="~/imgs/index/second-slider/@Model.ImageUrl"/>
+        </div>
+    </div>
+</div>
